@@ -1,0 +1,116 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 20px;
+    background: #f9f9f9;
+  }
+  
+  h1 {
+    padding: 1rem;
+    font-size: 3rem;
+    text-align: center;
+    background-color: rgb(48, 48, 48);
+    color: #ffffff;
+  }
+
+  table {
+    border: none;
+    width: 90%;
+    margin: auto;
+    margin-top: 10px;
+  }
+  
+  table td,
+  table th {
+    padding: 8px;
+    border-radius: 0.6rem;
+    text-align: center;
+  }
+  
+  table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  table tr:hover {
+    background-color: #ddd;
+  }
+  
+  table th:hover {
+    background-color: rgb(0, 0, 0);
+  }
+  
+  table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: rgb(102, 102, 102);
+    color: white;
+  }
+  
+  #Back{
+    float: right;
+    margin: 2rem;
+    padding: 1rem;
+    width: 15vw;
+    max-width: 200px;
+    height: 15vw;
+    max-height: 200px;
+    color: white;
+    font-weight: bolder;
+
+
+    border-radius: 2rem;
+    background-color: rgb(41, 41, 41);
+  }
+
+  #Back i{
+    position: relative;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 8rem;
+    margin-bottom: 1rem;
+  }
+
+  #Back span{
+    position: relative;
+    top: 10%;
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 1250px)
+  {
+    #Back i{
+      font-size: 7rem;
+    }
+    #Back span{
+      visibility: hidden;
+    }
+  }
+
+  @media screen and (max-width: 800px)
+  {
+    #Back i{
+      font-size: 4em;
+    }
+  }
+
+  #Back:hover{
+    transition: 200ms;
+    border: solid black 2px;
+    background-color: white;
+  }
+
+  #Back:hover i{
+    transition-delay: 200ms;
+    color: rgb(0, 0, 0);
+    background-color: white;
+  }
+
+  #Back:hover span{
+    transition: 400ms;
+    color: rgb(0, 0, 0);
+    background-color: white;
+  }

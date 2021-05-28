@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>EMPLOYEE LIST</title>
+    <link rel="stylesheet" href="css.css" type="text/css" />
+    <link rel="stylesheet" href="../fa/css/all.css" type="text/css" />
+  </head>
+  <body>
+    <h1><strong>EMPLOYEE LIST</strong></h1>
+
+    <table id="emp-list">
+      <tr>
+        <th>EMPLOYEE ID</th>
+        <th>EMPLOYEE NAME</th>
+        <th>DESIGNATION</th>
+        <th>EMPLOYEE AGE</th>
+        <th>RESIDENT OF INDIA?</th>
+      </tr>
+    </table>
+
+    <section id="Back" onclick="goBack()">
+      <i class="far fa-hand-point-left" aria-hidden="true"></i><br />
+      <span>GO BACK</span>
+    </section>
+
+    <script>
+      function clearList() {
+        var tree = (document.getElementById("emp-list").innerHTML =
+          "<tr><th>EMPLOYEE ID</th><th>EMPLOYEE NAME</th><th>DESIGNATION</th><th>EMPLOYEE AGE</th><th>RESIDENT OF INDIA?</th></tr>");
+      }
+
+      function addElement(element) {
+        var tree = document.getElementById("emp-list");
+
+        var tr = document.createElement("TR");
+        var empId = document.createElement("TD");
+        var empName = document.createElement("TD");
+        var desg = document.createElement("TD");
+        var age = document.createElement("TD");
+        var resident = document.createElement("TD");
+
+        empId.textContent = element["empId"];
+        empName.textContent = element["empName"];
+        desg.textContent = element["desg"];
+        age.textContent = element["age"];
+        resident.textContent = element["resident"] == true ? "YES" : "NO";
+        tr.appendChild(empId);
+        tr.appendChild(empName);
+        tr.appendChild(desg);
+        tr.appendChild(age);
+        tr.appendChild(resident);
+
+        tree.appendChild(tr);
+      }
+
+      function getList() {
+        fetch("/emp_list", { method: "POST" })
+          .then((res) => res.json())
+          .then((data) => {
+            data.forEach((element) => {
+              console.log(element);
+              addElement(element);
+            });
+          });
+      }
+
+      document.addEventListener("DOMContentLoaded", (event) => {
+        clearList();
+        getList();
+      });
+    </script>
+
+    <script>
+      function goBack() {
+        window.location.replace("http://localhost:5000/landing_page/html.html");
+      }
+    </script>
+  </body>
+</html>

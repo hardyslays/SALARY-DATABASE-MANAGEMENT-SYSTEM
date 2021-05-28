@@ -1,0 +1,196 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 20px;
+  background: #f9f9f9;
+}
+
+h1 {
+  padding: 1rem;
+  font-size: 3rem;
+  text-align: center;
+  background-color: rgb(48, 48, 48);
+  color: #ffffff;
+}
+
+h2 {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: rgb(102, 102, 102);
+  color: white;
+}
+
+table {
+  border: none;
+  width: 90%;
+  margin: auto;
+  margin-top: 10px;
+}
+
+table td,
+table th {
+  padding: 8px;
+  border-radius: 0.6rem;
+  text-align: center;
+}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+table tr:hover {
+  background-color: #ddd;
+}
+
+table th:hover {
+  background-color: rgb(0, 0, 0);
+}
+
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: rgb(102, 102, 102);
+  color: white;
+}
+
+button {
+  background-color: #555;
+  border: none;
+  color: WHITE;
+  text-align: center;
+  width: 50vw;
+  margin-left: 25vw;
+  margin-top: 3rem;
+  height: 2rem;
+  text-decoration: none;
+  border-radius: 0.3rem;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #f9f9f9;
+  color: black;
+  border: black solid 1px;
+  font-weight: bold;
+}
+
+#Search_emp {
+  width: 90vw;
+  margin: 20px auto;
+  padding: 0.5rem;
+  border-radius: 1.5rem;
+  background-color: #3d3d3d;
+}
+
+#Search_emp input {
+  width: 75vw;
+  color: #353535;
+}
+
+#Search_emp i {
+  color: rgb(241, 241, 241);
+  font-size: 80%;
+  padding: 0.3rem;
+}
+
+#Search_emp i:hover {
+  border: double white 0.1rem;
+  border-radius: 50%;
+  padding: 0.2rem;
+}
+
+#Back {
+  float: right;
+  margin: 2rem;
+  padding: 1rem;
+  width: 15vw;
+  max-width: 200px;
+  height: 15vw;
+  max-height: 200px;
+  color: white;
+  font-weight: bolder;
+
+  border-radius: 2rem;
+  background-color: rgb(41, 41, 41);
+}
+
+#Back i {
+  position: relative;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 8rem;
+  margin-bottom: 1rem;
+}
+
+#Back span {
+  position: relative;
+  top: 10%;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+@media screen and (max-width: 1250px) {
+  #Back i {
+    font-size: 7rem;
+  }
+  #Back span {
+    visibility: hidden;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #Back i {
+    font-size: 4em;
+  }
+}
+
+#Back:hover {
+  transition: 200ms;
+  border: solid black 2px;
+  background-color: white;
+}
+
+#Back:hover i {
+  transition-delay: 200ms;
+  color: rgb(0, 0, 0);
+  background-color: white;
+}
+
+#Back:hover span {
+  transition: 400ms;
+  color: rgb(0, 0, 0);
+  background-color: white;
+}
+
+#delete {
+  width: 100vw;
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#success-div {
+  margin: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 15px 3px black;
+  padding: 1.5rem;
+  background-color: #ddd;
+}
+
+#success-div:hover {
+  transition: 200ms;
+  box-shadow: 0px 0px 15px 5px black;
+}
+
+#success-div h1,
+h2 {
+  font-size: 3rem;
+  background-color: #ddd;
+  color: black;
+}

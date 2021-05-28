@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME PAGE</title>
+    <link rel="stylesheet" href="./fa/css/all.css" type="text/css">
+    <link rel="stylesheet" href="css.css" type="text/css">
+
+    <script src="main.js"></script>
+</head>
+<body>
+    
+    <div id="Content">
+
+    <h1><strong><b>COMPANY SALARY MANAGEMENT SERVER</b></strong></h1>
+    <h2><strong>WHAT DO YOU WANT TO DO TODAY?</strong></h2>
+
+    <section class="choices">
+        <div class="choice inactive" onclick="addEmpHTML()">
+        <i class="fa fa-user-plus"></i>
+        <br>
+        <a href="" target=></a>
+
+        <span class="ch_cont">ADD STAFF</span>
+        </div>
+        <div class="choice inactive" onclick="removeEmpHTML()">
+            <i class="fa fa-user-slash"></i><br>
+            <span class="ch_cont">REMOVE STAFF</span>
+        
+        </div><div class="choice inactive" onclick="empList()">
+            <i class="fa fa-users"></i><br>
+            <span class="ch_cont">STAFF LIST</span>
+        
+        </div><div class="choice inactive" onclick="checkSS()">
+            <i class="fas fa-clipboard-list"></i><br>
+            <span class="ch_cont">SEE DETAILS</span>
+       
+        </div><div class="choice inactive" onclick="updateSS()">
+            <i class="fas fa-clipboard-check"></i><br>
+            <span class="ch_cont">UPDATE DETAILS</span>
+
+        
+        </div><div class="return" onclick="exitIt()">
+            <i class="fas fa-undo"></i><br>
+            <span class="ch_cont">EXIT</span>
+            </div>
+            
+    </section>
+
+</div>
+</body>
+</html>

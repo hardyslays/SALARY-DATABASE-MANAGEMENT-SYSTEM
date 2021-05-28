@@ -1,0 +1,154 @@
+body{
+    margin:0;
+    padding: 0;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+}
+
+h1 {
+    padding: 1rem;
+    font-size: 3rem;
+    text-align: center;
+    background-color: rgb(48, 48, 48);
+    color: #ffffff;
+  }
+
+#success-div{
+  margin: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 15px 3px black;
+  padding: 1.5rem;
+  background-color: #ddd;
+}
+
+#success-div:hover{
+  transition: 200ms;
+  box-shadow: 0px 0px 15px 5px black;
+}
+
+  h2{
+    text-align: center;
+    font-size: 2.5rem;
+  }
+
+#details {
+    width: 90%;
+    margin: auto;
+    margin-top: 50px;
+  }
+  
+  #details td,
+  #details th {
+    padding: 8px;
+    border-radius: 0.6rem;
+    align-self: center;
+  }
+
+  #details td input{
+      text-align: center;
+      width: 80%;
+      height: 2rem;
+  }
+
+  #details td form input{
+    text-align: center;
+    width: 20%;
+    height: 1.5rem;
+}
+
+  #details td form label{
+    line-height: 1rem;
+    text-align: center;
+  }
+
+  #details tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  #details tr:hover {
+    background-color: #ddd;
+  }
+  
+  #details th:hover {
+    background-color: rgb(0, 0, 0);
+  }
+  
+  #details th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: rgb(102, 102, 102);
+    color: white;
+  }
+  
+  #Back{
+    float: right;
+    margin: 2rem;
+    padding: 1rem;
+    width: 15vw;
+    max-width: 200px;
+    height: 15vw;
+    max-height: 200px;
+    color: white;
+    font-weight: bolder;
+
+
+    border-radius: 2rem;
+    background-color: rgb(41, 41, 41);
+  }
+
+  #Back i{
+    position: relative;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 8rem;
+    margin-bottom: 1rem;
+  }
+
+  #Back span{
+    position: relative;
+    top: 10%;
+    font-size: 1.5em;
+    
+    text-align: center;
+  }
+
+  @media screen and (max-width: 1250px)
+  {
+    #Back i{
+      font-size: 7rem;
+    }
+    #Back span{
+      visibility: hidden;
+    }
+  }
+
+  @media screen and (max-width: 800px)
+  {
+    #Back i{
+      font-size: 4em;
+    }
+  }
+
+  #Back:hover{
+    transition: 200ms;
+    border: solid black 2px;
+    background-color: white;
+  }
+
+  #Back:hover i{
+    transition-delay: 200ms;
+    color: rgb(0, 0, 0);
+    background-color: white;
+  }
+
+  #Back:hover span{
+    transition: 400ms;
+    color: rgb(0, 0, 0);
+    background-color: white;
+  }

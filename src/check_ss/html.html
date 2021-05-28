@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VIEW SALARY SLIP</title>
+    <link rel="stylesheet" type="text/css" href="css.css" />
+    <link rel="stylesheet" type="text/css" href="../fa/css/all.css" />
+  </head>
+  <body>
+    <div class="Head"></div>
+
+    <article class="Body">
+      <h1><strong>SALARY SLIP</strong></h1>
+      <h2>ENTER EMPLOYEE ID TO SEARCH FOR EMPLOYEE</h2>
+      <div class="salary-details">
+        <table id="emp-id">
+          <tr>
+            <th>EMPLOYEE ID</th>
+            <td>
+              <input
+                placeholder="Emp ID"
+                id="empCode"
+                type="text"
+                name="empId"
+              />
+            </td>
+          </tr>
+        </table>
+
+        <div id="emp-details" style="display: none">
+          <table id="emp-det">
+            <tr>
+              <th>EMP ID:</th>
+              <td></td>
+            </tr>
+
+            <tr>
+              <th>EMP NAME:</th>
+              <td></td>
+            </tr>
+
+            <tr>
+              <th>DESIGNATION:</th>
+              <td></td>
+            </tr>
+
+            <tr>
+              <th>AGE:</th>
+              <td></td>
+            </tr>
+
+            <tr>
+              <th>RESIDENT OF INDIA:</th>
+              <td></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <button onclick="searchEmp()">SEARCH FOR EMPLOYEE</button>
+      <br /><br /><br /><br />
+
+      <h1><strong>SALARY SLIP</strong></h1>
+
+      <table id="salary-slip">
+        <tr>
+          <th width="70%">COMPONENTS</th>
+          <th>AMOUNT</th>
+        </tr>
+        <tr>
+          <td>BASIC</td>
+          <td style="text-align: center">--------</td>
+        </tr>
+        <tr>
+          <td>DA</td>
+          <td style="text-align: center">--------</td>
+        </tr>
+        <tr>
+          <td>HRA</td>
+          <td style="text-align: center">--------</td>
+        </tr>
+        <tr>
+          <td>TA</td>
+          <td style="text-align: center">--------</td>
+        </tr>
+        <tr>
+          <td>FEES, COMMISIONS AND BONUS</td>
+          <td style="text-align: center">--------</td>
+        </tr>
+        <tr>
+          <td>OTHER ALLOWANCES</td>
+          <td style="text-align: center">--------</td>
+        </tr>
+        <tr>
+          <td>PERQUISITES</td>
+          <td style="text-align: center">--------</td>
+        </tr>
+        <tr>
+          <td>RETIREMENT BENEFITS</td>
+          <td style="text-align: center">--------</td>
+        </tr>
+        <tr>
+          <th width="70%">GROSS SALARY</th>
+          <th style="text-align: center">--------</th>
+        </tr>
+        <tr>
+          <td width="70%">LESS: Deductions from salary</td>
+          <td style="text-align: center"></td>
+        </tr>
+        <tr>
+          <td width="70%">1.STANDARD DEDUCTIONS(upto 40,000)</td>
+          <td style="text-align: center">--------</td>
+        </tr>
+        <tr>
+          <td width="70%">2.ENTERTAINMENT ALLOWANCES u/s 16</td>
+          <td style="text-align: center">--------</td>
+        </tr>
+        <tr>
+          <th width="70%">NET SALARY</th>
+          <th style="text-align: center">--------</th>
+        </tr>
+      </table>
+
+      <h1><strong> INCOME TAX CALCULATION</strong></h1>
+      <table id="income-tax">
+        <tr>
+          <th width="70%">PARTICULARS</th>
+          <th>AMOUNT</th>
+        </tr>
+        <tr>
+          <td>NET INCOME</td>
+          <td style="text-align: center">--------</td>
+        </tr>
+        <tr>
+          <td>INCOME TAX (0-2,50,000 Rs.)</td>
+          <td style="text-align: center">--------</td>
+        </tr>
+        <tr>
+          <td>INCOME TAX (2,50,000-5,00,000 Rs.)</td>
+          <td style="text-align: center">--------</td>
+        </tr>
+        <tr>
+          <td>INCOME TAX (5,00,000-10,00,000 Rs.)</td>
+          <td style="text-align: center">--------</td>
+        </tr>
+        <tr>
+          <td>INCOME TAX (beyond 10,00,000 Rs.)</td>
+          <td style="text-align: center">--------</td>
+        </tr>
+
+        <tr>
+          <th width="70%">TOTAL INCOME TAX</th>
+          <th style="text-align: center">--------</th>
+        </tr>
+
+        <tr>
+          <td>SURCHARGE (if any)</td>
+          <td style="text-align: center">--------</td>
+        </tr>
+        <tr>
+          <td>HEALTH AND EDUCATION CESS(4% of Income tax + Surcharge)</td>
+          <td style="text-align: center">--------</td>
+        </tr>
+
+        <tr>
+          <th width="70%">PAYABLE INCOME TAX</th>
+          <th style="text-align: center">--------</th>
+        </tr>
+      </table>
+    </article>
+
+    <section id="Back" onclick="goBack()">
+      <i class="far fa-hand-point-left" aria-hidden="true"></i><br />
+      <span>GO BACK</span>
+    </section>
+
+    <div class="Footer"></div>
+
+    <script>
+      function goBack() {
+        window.location.replace("http://localhost:5000/landing_page/html.html");
+      }
+    </script>
+
+    <script>
+      function searchEmp() {
+        var id = document.getElementById("empCode").value;
+
+        // console.log(id);
+
+        fetch("/search_emp", {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ id: id }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.result == "null") {
+              window.alert(
+                "NO EMPLOYEE WITH GIVEN ID FOUND, OR SOME ERROR OCCURRED WHILE FETCHING DATA. PLEASE TRY AGAIN LATER AFTER SOME TIME."
+              );
+            } else {
+              var body = JSON.parse(data);
+              // console.log(body);
+
+              if (body["data"].length === 0) {
+                window.alert(
+                  "NO EMPLOYEE WITH GIVEN ID FOUND, OR SOME ERROR OCCURRED WHILE FETCHING DATA. PLEASE TRY AGAIN LATER AFTER SOME TIME."
+                );
+              } else {
+                var emp = body.data;
+                console.log(emp);
+
+                var t = (document.getElementById("emp-details").style.display =
+                  "block");
+
+                var tree = document.getElementById("emp-det");
+
+                var tr = tree.getElementsByTagName("tr");
+                tr[0].getElementsByTagName("td")[0].innerText = emp[0].empId;
+                tr[1].getElementsByTagName("td")[0].innerText = emp[0].empName;
+                tr[2].getElementsByTagName("td")[0].innerText = emp[0].desg;
+                tr[3].getElementsByTagName("td")[0].innerText = emp[0].age;
+                tr[4].getElementsByTagName("td")[0].innerText =
+                  emp[0].resident == 0 ? "NO" : "YES";
+
+                console.log("emp", emp[0].empId);
+                check_ss(emp[0].empId);
+              }
+            }
+          });
+      }
+    </script>
+
+    <script>
+      function check_ss(empid) {
+        fetch("/check_ss", {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ id: empid }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            var emp = data[0];
+
+            var table = document
+              .getElementById("salary-slip")
+              .getElementsByTagName("tr");
+
+            if (emp == undefined) {
+              table[1].getElementsByTagName("td")[1].innerText = "N/A";
+              table[2].getElementsByTagName("td")[1].innerText = "N/A";
+              table[3].getElementsByTagName("td")[1].innerText = "N/A";
+              table[4].getElementsByTagName("td")[1].innerText = "N/A";
+              table[5].getElementsByTagName("td")[1].innerText = "N/A";
+              table[6].getElementsByTagName("td")[1].innerText = "N/A";
+              table[7].getElementsByTagName("td")[1].innerText = "N/A";
+              table[8].getElementsByTagName("td")[1].innerText = "N/A";
+              table[9].getElementsByTagName("th")[1].innerText = "N/A";
+              table[11].getElementsByTagName("td")[1].innerText = "N/A";
+              table[12].getElementsByTagName("td")[1].innerText = "N/A";
+              table[13].getElementsByTagName("th")[1].innerText = "N/A";
+
+              clearIncome();
+            } else {
+              console.log(emp);
+
+              table[1].getElementsByTagName("td")[1].innerText = emp.basic;
+              table[2].getElementsByTagName("td")[1].innerText = emp.da;
+              table[3].getElementsByTagName("td")[1].innerText = emp.hra;
+              table[4].getElementsByTagName("td")[1].innerText = emp.ta;
+              table[5].getElementsByTagName("td")[1].innerText = emp.Commision;
+              table[6].getElementsByTagName("td")[1].innerText = emp.Allowances;
+              table[7].getElementsByTagName("td")[1].innerText = emp.perq;
+              table[8].getElementsByTagName("td")[1].innerText = emp.retire;
+              table[9].getElementsByTagName("th")[1].innerText = emp.gross;
+              table[11].getElementsByTagName("td")[1].innerText =
+                emp.gross > 40000 ? 40000 : emp.gross;
+              table[12].getElementsByTagName("td")[1].innerText =
+                emp.basic / 5.0 > 5000.0 ? 5000.0 : emp.basic / 5.0;
+              table[13].getElementsByTagName("th")[1].innerText = emp.net;
+
+              calcIncomeTax(emp.net);
+            }
+          });
+      }
+    </script>
+
+    <script>
+      function calcIncomeTax(netIncome) {
+        var IncomeTax = document
+          .getElementById("income-tax")
+          .getElementsByTagName("tr");
+        IncomeTax[1].getElementsByTagName("td")[1].innerText = netIncome;
+
+        var i1 = netIncome > 0 ? (netIncome > 250000 ? 250000 : netIncome) : 0;
+        var i2 =
+          netIncome > 250000
+            ? netIncome > 500000
+              ? 250000
+              : netIncome - 250000
+            : 0;
+        var i3 =
+          netIncome > 500000
+            ? netIncome > 1000000
+              ? 500000
+              : netIncome - 500000
+            : 0;
+        var i4 = netIncome > 1000000 ? netIncome - 1000000 : 0;
+
+        var r1 = 0.0 / 100;
+        var r2 = 5.0 / 100;
+        var r3 = 20.0 / 100;
+        var r4 = 30.0 / 100;
+
+        i1 = i1 * r1;
+        i2 = i2 * r2;
+        i3 = i3 * r3;
+        i4 = i4 * r4;
+
+        var income1 = (IncomeTax[2].getElementsByTagName("td")[1].innerText =
+          i1);
+        var income2 = (IncomeTax[3].getElementsByTagName("td")[1].innerText =
+          i2);
+        var income3 = (IncomeTax[4].getElementsByTagName("td")[1].innerText =
+          i3);
+        var income4 = (IncomeTax[5].getElementsByTagName("td")[1].innerText =
+          i4);
+        var totIncome = (IncomeTax[6].getElementsByTagName("th")[1].innerText =
+          i1 + i2 + i3 + i4);
+        // console.log(income1);
+
+        var sur =
+          netIncome > 5000000
+            ? netIncome > 10000000
+              ? netIncome > 20000000
+                ? netIncome > 50000000
+                  ? 37 / 100
+                  : 25 / 100
+                : 15 / 100
+              : 10 / 100
+            : 0;
+
+        sur = sur * (i1 + i2 + i3 + i4);
+
+        var Surcharge = (IncomeTax[7].getElementsByTagName("td")[1].innerText =
+          sur);
+
+        var hec = ((i1 + i2 + i3 + i4 + sur) * 4) / 100;
+        var hecTr = (IncomeTax[8].getElementsByTagName("td")[1].innerText =
+          hec);
+
+        var totalIncomeTax = (IncomeTax[9].getElementsByTagName(
+          "th"
+        )[1].innerText = Math.round(i1 + i2 + i3 + i4 + sur + hec));
+
+        // var button = document.getElementById("Save").removeAttribute("disabled");
+      }
+
+      function clearIncome() {
+        var IncomeTax = document
+          .getElementById("income-tax")
+          .getElementsByTagName("tr");
+        IncomeTax[1].getElementsByTagName("td")[1].innerText = "N/A";
+
+        var income1 = (IncomeTax[2].getElementsByTagName("td")[1].innerText =
+          "N/A");
+        var income2 = (IncomeTax[3].getElementsByTagName("td")[1].innerText =
+          "N/A");
+        var income3 = (IncomeTax[4].getElementsByTagName("td")[1].innerText =
+          "N/A");
+        var income4 = (IncomeTax[5].getElementsByTagName("td")[1].innerText =
+          "N/A");
+        var totIncome = (IncomeTax[6].getElementsByTagName("th")[1].innerText =
+          "N/A");
+        var Surcharge = (IncomeTax[7].getElementsByTagName("td")[1].innerText =
+          "N/A");
+        var hecTr = (IncomeTax[8].getElementsByTagName("td")[1].innerText =
+          "N/A");
+
+        var totalIncomeTax = (IncomeTax[9].getElementsByTagName(
+          "th"
+        )[1].innerText = "N/A");
+      }
+    </script>
+  </body>
+</html>

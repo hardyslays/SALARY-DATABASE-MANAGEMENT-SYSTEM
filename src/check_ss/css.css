@@ -1,0 +1,270 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 20px;
+  background: #f9f9f9;
+}
+
+h1 {
+  padding: 1rem;
+  font-size: 3rem;
+  text-align: center;
+  background-color: rgb(48, 48, 48);
+  color: #ffffff;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  background-color: #f2f2f2;
+}
+h2:hover {
+  background-color: #ddd;
+}
+
+table {
+  border: none;
+  width: 90%;
+  margin: auto;
+  margin-top: 10px;
+}
+
+table td,
+table th {
+  padding: 8px;
+  border-radius: 0.6rem;
+  text-align: center;
+}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+table tr:hover {
+  background-color: #ddd;
+}
+
+table th:hover {
+  background-color: rgb(0, 0, 0);
+}
+
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: rgb(102, 102, 102);
+  color: white;
+}
+
+#emp-id {
+  width: 90%;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#emp-id td,
+#emp-id th {
+  padding: 8px;
+  border-radius: 0.6rem;
+  align-self: center;
+}
+
+#emp-id td input {
+  text-align: center;
+  width: 80%;
+  height: 2rem;
+}
+
+#emp-id td form input {
+  text-align: center;
+  width: 20%;
+  height: 1.5rem;
+}
+
+#emp-id td form label {
+  line-height: 1rem;
+  text-align: center;
+}
+
+#emp-id tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#emp-id tr:hover {
+  background-color: #ddd;
+}
+
+#emp-id th:hover {
+  background-color: rgb(0, 0, 0);
+}
+
+#emp-id th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: rgb(102, 102, 102);
+  color: white;
+}
+
+#details {
+  background: #f2f2f2;
+  border: none;
+  border-radius: 1rem;
+  width: 90%;
+  margin: auto;
+  margin-top: 10px;
+
+  text-align: center;
+}
+
+#details h2 {
+  font-size: 1.7rem;
+  display: inline-flex;
+  width: 70vw;
+  position: relative;
+  top: 0;
+  left: 1rem;
+}
+
+.salary-details form label {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+#salary-slip {
+  text-align: right;
+  border: none;
+  width: 90%;
+  margin: auto;
+  margin-top: 10px;
+}
+
+#salary-slip td,
+#salary-slip th {
+  padding: 8px;
+  padding-right: 70px;
+  border-radius: 0.6rem;
+  align-self: center;
+}
+
+#salary-slip tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#salary-slip tr:hover {
+  background-color: #ddd;
+}
+
+#salary-slip th:hover {
+  background-color: rgb(0, 0, 0);
+}
+
+#salary-slip th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: rgb(102, 102, 102);
+  color: white;
+}
+
+button {
+  background-color: #555;
+  border: none;
+  color: WHITE;
+  text-align: center;
+  width: 50vw;
+  margin-left: 25vw;
+  margin-top: 3rem;
+  height: 2rem;
+  text-decoration: none;
+  border-radius: 0.3rem;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #f9f9f9;
+  color: black;
+  border: black solid 1px;
+  font-weight: bold;
+}
+
+#Back {
+  border-radius: 2rem;
+  width: 10vw;
+  max-width: 250px;
+  height: 10vw;
+  max-height: 250px;
+  margin-right: 1rem;
+  margin-left: auto;
+  padding: 2rem;
+  color: white;
+  font-weight: bolder;
+
+  background-color: rgb(41, 41, 41);
+}
+
+#Back {
+  float: right;
+  margin: 2rem;
+  padding: 1rem;
+  width: 15vw;
+  max-width: 200px;
+  height: 15vw;
+  max-height: 200px;
+  color: white;
+  font-weight: bolder;
+
+  border-radius: 2rem;
+  background-color: rgb(41, 41, 41);
+}
+
+#Back i {
+  position: relative;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 8rem;
+  margin-bottom: 1rem;
+}
+
+#Back span {
+  position: relative;
+  top: 10%;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+@media screen and (max-width: 1250px) {
+  #Back i {
+    font-size: 7rem;
+  }
+  #Back span {
+    visibility: hidden;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #Back i {
+    font-size: 4em;
+  }
+}
+
+#Back:hover {
+  transition: 200ms;
+  border: solid black 2px;
+  background-color: white;
+}
+
+#Back:hover i {
+  transition-delay: 200ms;
+  color: rgb(0, 0, 0);
+  background-color: white;
+}
+
+#Back:hover span {
+  transition: 400ms;
+  color: rgb(0, 0, 0);
+  background-color: white;
+}

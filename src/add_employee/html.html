@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ADD EMPLOYEE</title>
+    <link rel="stylesheet" href="../fa/css/all.css" type="text/css" />
+    <link rel="stylesheet" href="css.css" type="text/css" />
+  </head>
+  <body>
+    <h1>
+      <strong><b>ADDING A NEW EMPLOYEE</b></strong>
+    </h1>
+
+    <form id="add_employee" action="/add_employee" method="post">
+      <table id="details">
+        <tr>
+          <th>EMPLOYEE ID</th>
+          <td>
+            <label for="empId"></label
+            ><input
+              placeholder="Emp ID"
+              id="empCode"
+              type="text"
+              name="empId"
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <th>NAME OF EMPLOYEE</th>
+          <td>
+            <label for="empName"></label
+            ><input
+              placeholder="Employee Name"
+              type="text"
+              id="empName"
+              name="empName"
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <th>DESIGNATION OF EMPLOYEE</th>
+          <td>
+            <label for="desg"></label
+            ><input
+              placeholder="Employee Desg."
+              type="text"
+              id="desg"
+              name="desg"
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <th>AGE OF EMPLOYEE</th>
+          <td>
+            <label for="age"></label
+            ><input
+              placeholder="Employee age."
+              type="number"
+              id="age"
+              name="age"
+              max="100"
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <th>RESIDENT OF INDIA?</th>
+          <td>
+            <label for="resident"></label
+            ><input
+              placeholder="Yes/No"
+              type="text"
+              id="resident"
+              name="resident"
+            />
+          </td>
+        </tr>
+      </table>
+
+      <button form="add_employee">ADD NEW EMPLOYEE</button>
+    </form>
+
+    <section id="Back" onclick="goBack()">
+      <i class="far fa-hand-point-left" aria-hidden="true"></i><br />
+      <span>GO BACK</span>
+    </section>
+
+    <script>
+      function goBack() {
+        window.location.replace("http://localhost:5000/landing_page/html.html");
+      }
+    </script>
+  </body>
+</html>
