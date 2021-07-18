@@ -37,7 +37,7 @@
    2. Create the database Company in your local MySQL server, by either running the "CreatingCompanyDatabase.sql" file in MySQL Workbench, or using the scripts in that file to manually create the database.
    3. Update the ".env" file with the details of USER and PASSWORD of your local MySQL server user (Ex. USER=root and PASSWORD=root).
    4. Open the folder of project in a terminal, and run these commands:
-      * npm init -y {to initialise the project}
+      * npm init -y {to initialize the project}
       * npm i {to install the required dependencies}
       * npm start {to fire up the server, this will also open the website on your default browser, no need to thank me} 
   
