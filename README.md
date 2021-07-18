@@ -42,3 +42,5 @@
       * npm start {to fire up the server, this will also open the website on your default browser, no need to thank me} 
   
  ***
+
+# HAPPY CODING!!!
