@@ -4,8 +4,9 @@ const db = require("mysql");
 const con = require("./src/db");
 const BodyParser = require("body-parser");
 const { json } = require("express");
+require('dotenv').config();
 
-const PORT = 5000;
+const PORT = process.env.PORT;
 const app = express();
 
 app.use(express.static(__dirname));
@@ -208,3 +209,4 @@ app.post("/check_ss", (req, res) => {
 app.listen(PORT, () => {
   console.log(`CONNECTION OPENED AT PORT ${PORT}`);
 });
+

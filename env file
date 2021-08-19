@@ -1,0 +1,6 @@
+#Rename this file to '.env' and fill these lines
+PORT=5000
+DB_HOST=______
+DB_USER=______
+DB_PASSWORD=______
+DB_DATABASE=Company
